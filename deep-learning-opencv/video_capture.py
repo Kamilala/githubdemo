@@ -23,7 +23,7 @@ while cap.isOpened():
     ret, frame=cap.read()
     frame = imutils.resize(frame, width=400)
     (h, w) = frame.shape[:2]
-    blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)), 0.007843, (224, 224), 127.5)
+    blob = cv2.dnn.blobFromImage(cv2.resize(frame, (224, 224)))
     net.setInput(blob)
     start = time.time()
     preds = net.forward()
